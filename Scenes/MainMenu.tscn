@@ -1,13 +1,16 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="Columns" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
@@ -15,35 +18,40 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-anchor_left = -0.05
-anchor_right = 0.05
+[node name="Rows" type="VBoxContainer" parent="Columns"]
 margin_left = 270.0
 margin_right = 370.0
 margin_bottom = 480.0
 alignment = 1
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
-margin_top = 197.0
-margin_right = 164.0
-margin_bottom = 211.0
+[node name="Title" type="Label" parent="Columns/Rows"]
+margin_top = 195.0
+margin_right = 100.0
+margin_bottom = 209.0
 text = "Text Adventure"
 align = 1
 
-[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 215.0
-margin_right = 164.0
-margin_bottom = 235.0
+[node name="NewGame" type="Button" parent="Columns/Rows"]
+margin_top = 213.0
+margin_right = 100.0
+margin_bottom = 233.0
 text = "Nueva Partida"
 
-[node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 239.0
-margin_right = 164.0
-margin_bottom = 259.0
+[node name="Settings" type="Button" parent="Columns/Rows"]
+margin_top = 237.0
+margin_right = 100.0
+margin_bottom = 257.0
 text = "Opciones"
 
-[node name="Button3" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 263.0
-margin_right = 164.0
-margin_bottom = 283.0
+[node name="Control" type="Control" parent="Columns/Rows"]
+margin_top = 261.0
+margin_right = 100.0
+margin_bottom = 261.0
+
+[node name="Exit" type="Button" parent="Columns/Rows"]
+margin_top = 265.0
+margin_right = 100.0
+margin_bottom = 285.0
 text = "Salir"
+[connection signal="pressed" from="Columns/Rows/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="Columns/Rows/Exit" to="." method="_on_Exit_pressed"]
