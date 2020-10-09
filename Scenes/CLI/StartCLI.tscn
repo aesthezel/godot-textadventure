@@ -1,4 +1,6 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=1]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -20,3 +22,6 @@ margin_top = 233.0
 margin_right = 369.0
 margin_bottom = 247.0
 text = "AQUI VA EL CLI"
+
+[node name="ColorRect" parent="." instance=ExtResource( 1 )]
+visible = false

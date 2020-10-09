@@ -54,4 +54,6 @@ margin_right = 100.0
 margin_bottom = 285.0
 text = "Salir"
 [connection signal="pressed" from="Columns/Rows/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="Columns/Rows/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="toggled" from="Columns/Rows/Settings" to="." method="_on_Settings_toggled"]
 [connection signal="pressed" from="Columns/Rows/Exit" to="." method="_on_Exit_pressed"]
